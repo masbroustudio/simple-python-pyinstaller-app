@@ -39,8 +39,8 @@ pipeline {
                 }
             }
             steps {
+                echo "Deploying..."
                 sleep 60
-                echo "Install Requirements, Success."
             }
         }
     }
