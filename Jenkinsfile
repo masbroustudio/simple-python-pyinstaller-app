@@ -31,7 +31,7 @@ pipeline {
                 input message: 'Lanjutkan ke tahap Deploy? (klik "Proceed" (melanjutkan eksekusi pipeline ke tahap Deploy) atau "Abort" (menghentikan eksekusi pipeline))' 
             }
         }
-        stage('Deliver') {
+        stage('Deploy') {
             agent {
                 docker {
                     image 'cdrx/pyinstaller-windows:python3'
