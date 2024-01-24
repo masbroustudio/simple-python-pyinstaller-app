@@ -31,7 +31,7 @@ pipeline {
                 input message: 'Lanjutkan ke tahap Deploy? (klik "Proceed" (melanjutkan eksekusi pipeline ke tahap Deploy) atau "Abort" (menghentikan eksekusi pipeline))' 
             }
         }
-        stage('Deliver') {
+        stage('Deploy') {
             agent {
                 docker {
                     image 'cdrx/pyinstaller-linux:python2'
@@ -40,11 +40,7 @@ pipeline {
             steps {
                 sh 'pyinstaller --onefile sources/add2vals.py'
             }
-            post {
-                success {
-                    archiveArtifacts 'dist/add2vals'
-                }
-            }
+            sleep 60
         }
     }
 }
