@@ -39,18 +39,11 @@ pipeline {
                 }
             }
             steps {
-                echo "Something"
+                echo "Install Requirements, Success."
                 sh '''
                     cd app/
                     pip install -r requirements.txt
-                    cd gui
-                    ./gui_to_exe.sh
                 '''
-            }
-            post {
-                success {
-                    archiveArtifacts 'appName.exe'
-                }
             }
         }
     }
