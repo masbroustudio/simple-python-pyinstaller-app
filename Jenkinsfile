@@ -39,11 +39,8 @@ pipeline {
                 }
             }
             steps {
+                sleep 60
                 echo "Install Requirements, Success."
-                sh '''
-                    cd app/
-                    pip install -r requirements.txt
-                '''
             }
         }
     }
